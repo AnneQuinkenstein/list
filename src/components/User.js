@@ -5,7 +5,7 @@ const User = ({ userName, userId, editName, handleClick, index }) => {
     const [hidden, setHidden] = useState(false); 
 
     const handleEdit = (name, index) => {
-        if (hidden==true) {
+        if (hidden === true) {
             editName(name, index); 
         }
         setHidden(!hidden)
