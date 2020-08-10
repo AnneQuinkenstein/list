@@ -1,6 +1,6 @@
 import React, { useState } from 'react'; 
 
-const AddUser = ({ addUser }) => {
+const AddTask = ({ addTask }) => {
 
     const [name, setName]= useState('')
 
@@ -9,16 +9,16 @@ const AddUser = ({ addUser }) => {
     }
     
     const handleSubmit = (name) => {
-        addUser(name); 
+        addTask(name); 
         setName(' '); 
     }
 
     return(
-        <div className='addUser'> 
+        <div className='addTask'> 
             <input onChange={handleChange} value={name} type='text' autoFocus></input>
-            <button onClick={() => handleSubmit(name)}>add user</button>
+            <button onClick={() => handleSubmit(name)}>add task</button>
         </div>
     )
 }
 
-export default AddUser
+export default AddTask

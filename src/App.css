@@ -10,7 +10,7 @@ body {
   margin: 5vh 20vw; 
 }
 
-.usersList {
+.tasksList {
   display: flex;
   flex-wrap: wrap;
 }
@@ -24,13 +24,15 @@ body {
   width: 200px; 
 }
 
-.user {
+.task {
   position: absolute; 
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0,0,0,0.3); 
   text-align: center; 
   margin: 26px auto 0; 
   padding: 5vw; 
+  /* box-shadow: 11px 3px 71px -6px rgb(0,0,0); 
+  border-radius: 50%; */
 }
 
 .addUser button {
@@ -41,18 +43,21 @@ body {
   display: none;
 }
 
-
-.singleUser-enter {
-  transform: scale(0);
+.singleTask-enter {
+  transform: scale(1.1) translateY(-10px);
+  opacity: 0.5; 
 }
-.singleUser-enter-active {
-  transform: scale(1);
+.singleTask-enter-active {
+  transform: scale(1) translateY(0);
+  opacity: 1; 
   transition: transform 500ms ease-in-out;
 }
-.singleUser-exit {
-  transform: scale(1);
+.singleTask-exit {
+  opacity: 1; 
+  transform: scale(1) translateY(0) translateX(0);
 }
-.singleUser-exit-active {
-  transform: scale(0);
+.singleTask-exit-active {
+  transform: scale(0.9) translateY(70px);
+  opacity: 0.8; 
   transition: transform 500ms ease-in;
 }

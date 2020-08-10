@@ -1,21 +1,21 @@
 import React, { useState, useEffect } from 'react';
 
-const User = ({ userName, userId, editName, handleClick, index }) => {
-    const [name, setName] = useState(userName)
+const Task = ({ userName, taskId, editName, handleClick, index }) => {
+    const [task, setTask] = useState(userName); 
     const [hidden, setHidden] = useState(false);
     const [randNum, setRandNum] = useState(null);
     const [randNum2, setRandNum2] = useState(null);
 
 
-    const handleEdit = (name, index) => {
+    const handleEdit = (task, index) => {
         if (hidden === true) {
-            editName(name, index);
+            editName(task, index);
         }
         setHidden(!hidden)
     }
 
     const handleChange = (e) => {
-        setName(e.target.value);
+        setTask(e.target.value);
     }
 
     useEffect(() => {
@@ -35,13 +35,13 @@ const User = ({ userName, userId, editName, handleClick, index }) => {
     }
 
     return (
-        <div className="user" style={style}>
+        <div className="task" style={style}>
             <div className={hidden ? 'hidden' : 'visible'}>{userName}</div>
-            <div className={hidden ? 'visible' : 'hidden'} > <input onChange={handleChange} type="text" name="name" value={name}></input></div>
-            <button onClick={() => handleClick(userId)}>Delete User</button>
-            <button onClick={() => handleEdit(name, index)}>{hidden ? 'Confirm Change' : 'Edit User'} </button>
+            <div className={hidden ? 'visible' : 'hidden'} > <input onChange={handleChange} type="text" name="task" value={task}></input></div>
+            <button onClick={() => handleClick(taskId)}>Delete Task</button>
+            <button onClick={() => handleEdit(task, index)}>{hidden ? 'Confirm Change' : 'Edit Task'} </button>
         </div>
     )
 }
 
-export default User; 
+export default Task; 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import User from './components/User';
-import AddUser from './components/AddUser';
+import Task from './components/Task';
+import AddTask from './components/AddTask';
 import { v4 as uuidv4 } from 'uuid';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
@@ -17,11 +17,11 @@ const App = () => {
 
   //delete User in <User>
   const handleClick = (id) => {
-    setUsers(users.filter(user => (user.id !== id)))
+    setUsers(users.filter(task => (task.id !== id)))
   }
 
-  //add User in <AddUser>
-  const addUser = (name) => {
+  //add User in <AddTask>
+  const addTask = (name) => {
     setUsers([...users, { id: uuidv4(), name: name }])
   }
 
@@ -32,35 +32,30 @@ const App = () => {
       ...prevState]))
   }
 
-  //different Style for each <User> 
-  // const individuell = {
-  
-  // }
-
   return (
     <div className="App">
-      <h1 class="animate__animated animate__bounce">my not to do list</h1>
+      <h1>my not to do list</h1>
       <div >
-        <TransitionGroup className='usersList'>
-          {users && users.map((user, index) =>
+        <TransitionGroup className='tasksList'>
+          {users && users.map((task, index) =>
             <CSSTransition
-              key={user.id}
+              key={task.id}
               timeout={500}
-              classNames='singleUser'
+              classNames='singleTask'
             >
-              <User 
+              <Task 
                 editName={editName}
                 handleClick={handleClick}
-                userName={user.name}
-                key={user.id}
-                userId={user.id}
+                userName={task.name}
+                key={task.id}
+                taskId={task.id}
                 index={index}
               />
             </CSSTransition>
           )}
         </TransitionGroup>
       </div>
-      <AddUser addUser={addUser} />
+      <AddTask addTask={addTask} />
     </div>
   );
 }
