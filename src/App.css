@@ -1,3 +1,10 @@
+body {
+  background: linear-gradient(#ccc, #fff);
+  font: 14px sans-serif; 
+  padding: 20px; 
+  height: 100vh; 
+  width: 100vw;
+}
 
 .App {
   margin: 5vh 20vw; 
@@ -18,10 +25,12 @@
 }
 
 .user {
+  position: absolute; 
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3); 
   text-align: center; 
-  border: 2px dotted black; 
-  margin: 10px; 
-  padding: 10px; 
+  margin: 26px auto 0; 
+  padding: 5vw; 
 }
 
 .addUser button {

@@ -32,8 +32,14 @@ const App = () => {
       ...prevState]))
   }
 
+  //different Style for each <User> 
+  // const individuell = {
+  
+  // }
+
   return (
     <div className="App">
+      <h1 class="animate__animated animate__bounce">my not to do list</h1>
       <div >
         <TransitionGroup className='usersList'>
           {users && users.map((user, index) =>
@@ -42,7 +48,7 @@ const App = () => {
               timeout={500}
               classNames='singleUser'
             >
-              <User
+              <User 
                 editName={editName}
                 handleClick={handleClick}
                 userName={user.name}
