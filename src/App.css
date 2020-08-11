@@ -35,6 +35,10 @@ body {
   border-radius: 50%; */
 }
 
+.task:hover {
+  cursor: pointer;
+}
+
 .addUser button {
     margin: 5px 61px;
 }
@@ -60,4 +64,19 @@ body {
   transform: scale(0.9) translateY(70px);
   opacity: 0.8; 
   transition: transform 500ms ease-in;
+}
+
+.deleteButton {
+	/* background-color: #b61919;
+	color: white;
+  padding: 0.2vw 0.5vw; */
+  border-color: transparent;
+}
+
+.editButton{
+  border-color: transparent;
+}
+
+.material-icons{
+  font-size: 20px; 
 }
