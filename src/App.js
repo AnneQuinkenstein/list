@@ -6,29 +6,29 @@ import { v4 as uuidv4 } from 'uuid';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 
 const App = () => {
-  const [users, setUsers] = useState(null);
+  const [tasks, setTasks] = useState(null);
 
   //calling API on mounting
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://secure-retreat-69254.herokuapp.com/tasks')
       .then(res => res.json())
-      .then(data => setUsers(data));
+      .then(data => setTasks(data)); 
   }, [])
 
-  //delete User in <User>
+  //delete Task in <Task>
   const handleClick = (id) => {
-    setUsers(users.filter(task => (task.id !== id)))
+    setTasks(tasks.filter(task => (task.id !== id)))
   }
 
-  //add User in <AddTask>
+  //add Task in <AddTask>
   const addTask = (name) => {
-    setUsers([...users, { id: uuidv4(), name: name }])
+    setTasks([...tasks, { id: uuidv4(), name: name }])
   }
 
-  //edit User in <User> 
+  //edit Task in <Task> 
   const editName = (name, index) => {
-    users[index].name = name;
-    setUsers((prevState => [
+    tasks[index].name = name;
+    setTasks((prevState => [
       ...prevState]))
   }
 
@@ -37,16 +37,17 @@ const App = () => {
       <h1>my not to do list</h1>
       <div >
         <TransitionGroup className='tasksList'>
-          {users && users.map((task, index) =>
+          {tasks && tasks.map((task, index) =>
             <CSSTransition
               key={task.id}
-              timeout={500}
+              timeout={1000}
               classNames='singleTask'
             >
               <Task 
                 editName={editName}
                 handleClick={handleClick}
-                userName={task.name}
+                taskName={task.name}
+                taskCathegory={task.cathegory}
                 key={task.id}
                 taskId={task.id}
                 index={index}

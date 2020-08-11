@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from 'react';
 
-const Task = ({ userName, taskId, editName, handleClick, index }) => {
-    const [task, setTask] = useState(userName);
+const Task = ({ taskName, taskCathegory, taskId, editName, handleClick, index }) => {
+    const [task, setTask] = useState(taskName);
     const [hidden, setHidden] = useState(false);
     const [style, setStyle]= useState({
         zIndex: index,
         top: '',
         left: '',
     }); 
+    const [styleShadow, setStyleShadow] = useState({
+        top: '',
+        left: '',
+    })
 
+
+    console.log(taskName);
 
     const handleEdit = (task, index) => {
         if (hidden === true) {
@@ -24,10 +30,16 @@ const Task = ({ userName, taskId, editName, handleClick, index }) => {
     useEffect(() => {
         const randNum = Math.random() * 70;
         const randNum2 = Math.random() * 70;
+        const randNum3 = randNum + 28; 
+        const randNum4 = randNum2 + 5; 
         setStyle({
             zIndex: index,
             top: `${randNum}%`,
             left: `${randNum2}%`,
+        })
+        setStyleShadow({
+            top: `${randNum3}%`,
+            left: `${randNum4}%`,
         })
     }, [])
 
@@ -40,14 +52,19 @@ const Task = ({ userName, taskId, editName, handleClick, index }) => {
         })
     }
 
+
     
 
     return (
-        <div className="task" onClick={handleIndex} style={style}>
-            <div className={hidden ? 'hidden' : 'visible'}>{userName}</div>
+        <div>
+        <div className="shadow" style={styleShadow}></div>
+        <div className="postit" onClick={handleIndex} style={style}>
+            <div className={hidden ? 'hidden' : 'visible'}>{taskName}</div>
             <div className={hidden ? 'visible' : 'hidden'} > <input onChange={handleChange} type="text" name="task" value={task}></input></div>
             <button className="deleteButton" onClick={() => handleClick(taskId)}><i class="material-icons">delete</i></button>
             <button className="editButton" onClick={() => handleEdit(task, index)}>{hidden ? <i class="material-icons">check_circle</i> : <i class="material-icons">border_color</i>} </button>
+            <div>{taskCathegory}</div>
+        </div>
         </div>
     )
 }
