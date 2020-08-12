@@ -35,7 +35,8 @@ const App = () => {
   return (
     <div className="App">
       <h1>my not to do list</h1>
-      <div >
+      <AddTask addTask={addTask} />
+      <ul >
         <TransitionGroup className='tasksList'>
           {tasks && tasks.map((task, index) =>
             <CSSTransition
@@ -55,8 +56,7 @@ const App = () => {
             </CSSTransition>
           )}
         </TransitionGroup>
-      </div>
-      <AddTask addTask={addTask} />
+      </ul>
     </div>
   );
 }
