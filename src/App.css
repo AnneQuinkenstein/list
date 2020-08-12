@@ -29,7 +29,7 @@ body{
   padding-bottom:10px;
 }
 
-.tasksList div p{
+.tasksList div p, .tasksList div p input{
   font-family:"Reenie Beanie",arial,sans-serif;
   font-size:180%;
 }
@@ -53,6 +53,9 @@ body{
 }
 
 .tasksList div a{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   -webkit-transform:rotate(-6deg);
   -o-transform:rotate(-6deg);
   -moz-transform:rotate(-6deg);
@@ -96,15 +99,16 @@ body{
   cursor: pointer;
 }
 
-button{
-  background-color: transparent;
-  border-color: transparent;
+.tasksList div a .button{
+  display: flex;
+  justify-content: flex-end;
+  width: 80%; 
 }
 
-.button{
-  display: flex; 
-  flex-direction: row;
-  justify-content: space-around;
+
+.tasksList div a button{
+  background-color: transparent;
+  border-color: transparent;
 }
 
 .hidden {

@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
-const Task = ({ taskName, taskCathegory, taskId, editName, handleClick, index }) => {
+const Task = ({ taskName, taskCathegory, taskId, editName, handleClick, index, listLength }) => {
     const [task, setTask] = useState(taskName);
     const [hidden, setHidden] = useState(false);
+    const [num, setNum] = useState(listLength);
     const [style, setStyle] = useState({
         zIndex: index,
         top: '',
         left: '',
     });
+   
 
     const handleEdit = (task, index) => {
         if (hidden === true) {
@@ -22,7 +24,7 @@ const Task = ({ taskName, taskCathegory, taskId, editName, handleClick, index })
 
     useEffect(() => {
         const randNum = Math.random() * 70;
-        const randNum2 = Math.random() * 90;
+        const randNum2 = Math.random() * 80;
         setStyle({
             zIndex: index,
             top: `${randNum}%`,
@@ -31,12 +33,12 @@ const Task = ({ taskName, taskCathegory, taskId, editName, handleClick, index })
     }, [])
 
     const handleIndex = (e) => {
-        const num = `${Math.floor(Math.random() * 100)}`;
         setStyle({
             zIndex: num,
             top: 'style[top]',
             left: 'style[left]',
         })
+        setNum(num + num)
         e.preventDefault();
     }
 

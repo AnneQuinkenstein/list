@@ -32,8 +32,6 @@ const App = () => {
       ...prevState]))
   }
 
-  console.log(tasks);
-
   return (
     <div className="App">
       <h1>my not to do list</h1>
@@ -54,6 +52,7 @@ const App = () => {
                 key={task.id}
                 taskId={task.id}
                 index={index}
+                listLength={tasks.length}
               />
             </CSSTransition>
           )}
