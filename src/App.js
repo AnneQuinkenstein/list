@@ -32,11 +32,13 @@ const App = () => {
       ...prevState]))
   }
 
+  console.log(tasks);
+
   return (
     <div className="App">
       <h1>my not to do list</h1>
       <AddTask addTask={addTask} />
-      <ul >
+    
         <TransitionGroup className='tasksList'>
           {tasks && tasks.map((task, index) =>
             <CSSTransition
@@ -56,7 +58,7 @@ const App = () => {
             </CSSTransition>
           )}
         </TransitionGroup>
-      </ul>
+    
     </div>
   );
 }
