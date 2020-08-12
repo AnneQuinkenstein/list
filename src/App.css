@@ -11,7 +11,6 @@ body{
   height: 100vh; 
 }
 
-
 .tasksList{
   overflow:hidden;
   padding:3em;
@@ -87,7 +86,7 @@ body{
   top:-10px;
 }
 
-.tasksList div a:hover,.tasksList div a:focus{
+.tasksList div a:active,.tasksList div a:focus{
   -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
   -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
   box-shadow:10px 10px 7px rgba(0,0,0,.7);
@@ -130,117 +129,21 @@ body{
   transition: transform 1000ms ease-in;
 }
 
-/* 
-body {
-  
-  font: 14px sans-serif; 
-  padding: 20px; 
-  height: 100vh; 
-  width: 100vw;
+.title{
+  position: absolute; 
+  top: 2vh; 
+  left: 5vw; 
 }
 
-.App {
-  margin: 5vh 20vw; 
-}
-
-.tasksList {
-  display: flex;
-  flex-wrap: wrap;
-}
 
 .addTask {
-  display: flex; 
-  flex-direction: column;
-  border: 2px dotted black; 
+  position: absolute; 
+  bottom: 2vh; 
+  right: 5vw; 
+  display: inline-block; 
+  border: 0.02px solid black; 
   margin: 10px; 
   padding: 10px; 
-  width: 200px; 
+  min-width: 200px; 
 }
 
-.task {
-  position: absolute; 
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3); 
-  text-align: center; 
-  margin: 26px auto 0; 
-  padding: 5vw; 
-  /* box-shadow: 11px 3px 71px -6px rgb(0,0,0); 
-  border-radius: 50%; */
-/*}
-
-.task:hover {
-  cursor: pointer;
-}
-
-.addTask button {
-    margin: 5px 61px;
-}
-
-
-
-.deleteButton {
-	/* background-color: #b61919;
-	color: white;
-  padding: 0.2vw 0.5vw; */
-  /*border-color: transparent;
-}
-
-.editButton{
-  border-color: transparent;
-}
-
-.material-icons{
-  font-size: 20px; 
-}
-.task {
-  position: absolute; 
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3); 
-  text-align: center; 
-  margin: 26px auto 0; 
-  padding: 5vw; 
-  /* box-shadow: 11px 3px 71px -6px rgb(0,0,0); 
-  border-radius: 50%; */
-/*}
-
-.task:hover {
-  cursor: pointer;
-}
-.postit {
-  position: absolute; 
-  line-height: 1;
-  text-align:center;     
-  width: 275px;    
-  margin: 25px;    
-  min-height:170px;
-  max-height:170px;
-  padding-top:35px;  
-  border:1px solid #E8E8E8;  
-  border-top:60px solid #fdfd86;
-  font-family:'Reenie Beanie';    
-  font-size: 33px;       
-  border-bottom-right-radius: 60px 5px;
-  display:inline-block;    
-  background: #ffff88; 
-  background: -moz-linear-gradient(-45deg, #ffff88 81%, #ffff88 82%, #ffff88 82%, #ffffc6 100%); /* FF3.6+ */
- /* background: -webkit-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Chrome10+,Safari5.1+ */
- /* background: -o-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* Opera 11.10+ */
-/*background: -ms-linear-gradient(-45deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* IE10+ */
- /* background: linear-gradient(135deg, #ffff88 81%,#ffff88 82%,#ffff88 82%,#ffffc6 100%); /* W3C */
-  /*filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffff88', endColorstr='#ffffc6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-/*}
- 
-.shadow {     
-  content: "";
-  position:absolute;
-  z-index:-1;
-  width:200px;
-  height: 25px;
-  background: rgba(0, 0, 0, 0.2);
-  box-shadow:2px 15px 5px rgba(0, 0, 0, 0.40);
-  -moz-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-  -webkit-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-  -o-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-  -ms-transform: matrix(-1, -0.1, 0, 1, 0, 0);
-  transform: matrix(-1, -0.1, 0, 1, 0, 0);
-} */

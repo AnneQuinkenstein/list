@@ -12,7 +12,7 @@ const App = () => {
   useEffect(() => {
     fetch('https://secure-retreat-69254.herokuapp.com/tasks')
       .then(res => res.json())
-      .then(data => setTasks(data)); 
+      .then(data => setTasks(data));
   }, [])
 
   //delete Task in <Task>
@@ -34,30 +34,28 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1>my not to do list</h1>
-      <AddTask addTask={addTask} />
-    
-        <TransitionGroup className='tasksList'>
-          {tasks && tasks.map((task, index) =>
-            <CSSTransition
+      <h1 className="title">my not to do list</h1>
+      <TransitionGroup className='tasksList'>
+        {tasks && tasks.map((task, index) =>
+          <CSSTransition
+            key={task.id}
+            timeout={1000}
+            classNames='singleTask'
+          >
+            <Task
+              editName={editName}
+              handleClick={handleClick}
+              taskName={task.name}
+              taskCathegory={task.cathegory}
               key={task.id}
-              timeout={1000}
-              classNames='singleTask'
-            >
-              <Task 
-                editName={editName}
-                handleClick={handleClick}
-                taskName={task.name}
-                taskCathegory={task.cathegory}
-                key={task.id}
-                taskId={task.id}
-                index={index}
-                listLength={tasks.length}
-              />
-            </CSSTransition>
-          )}
-        </TransitionGroup>
-    
+              taskId={task.id}
+              index={index}
+              listLength={tasks.length}
+            />
+          </CSSTransition>
+        )}
+      </TransitionGroup>
+      <AddTask addTask={addTask} />
     </div>
   );
 }
