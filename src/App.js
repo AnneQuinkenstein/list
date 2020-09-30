@@ -4,16 +4,22 @@ import Task from './components/Task';
 import AddTask from './components/AddTask';
 import { v4 as uuidv4 } from 'uuid';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import data from "./components/data";
+
 
 const App = () => {
   const [tasks, setTasks] = useState(null);
 
   //calling API on mounting
+  // useEffect(() => {
+  //   fetch('https://secure-retreat-69254.herokuapp.com/tasks')
+  //     .then(res => res.json())
+  //     .then(data => setTasks(data));
+  // }, [])
+
   useEffect(() => {
-    fetch('https://secure-retreat-69254.herokuapp.com/tasks')
-      .then(res => res.json())
-      .then(data => setTasks(data));
-  }, [])
+    setTasks(data);
+  });
 
   //delete Task in <Task>
   const handleClick = (id) => {
