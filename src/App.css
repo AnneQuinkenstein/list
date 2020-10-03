@@ -1,111 +1,140 @@
-*{
-  margin:0;
-  padding:0;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-body{
-  font-family:arial,sans-serif;
-  font-size:100%;
+body {
+  font-family: arial, sans-serif;
+  font-size: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
   background: linear-gradient(#ccc, #fff);
-  color:#fff;
-  height: 100vh; 
+  color: black;
+  height: 100vh;
 }
 
-.tasksList{
-  overflow:hidden;
-  padding:3em;
-}
-
-.tasksList div{
+.title {
   position: absolute;
-  margin:1em;
-  float:left;
+  top: 2vh;
+  left: 5vw;
 }
 
-.tasksList div h2{
-  font-size:120%;
-  font-weight:bold;
-  padding-bottom:10px;
+.tasksList {
+  overflow: hidden;
+  padding: 3em;
 }
 
-.tasksList div p, .tasksList div p input{
-  font-family:"Reenie Beanie",arial,sans-serif;
-  font-size:180%;
+.tasksList .green a {
+  -o-transform: rotate(4deg);
+  -webkit-transform: rotate(4deg);
+  -moz-transform: rotate(4deg);
+  position: relative;
+  top: 5px;
+  background: #cfc;
 }
 
-.tasksList div a{
-  text-decoration:none;
-  color:#000;
-  background:#ffc;
-  display:flex;
-  flex-direction: column;
-  justify-content: space-evenly;
-  height:10em;
-  width:10em;
-  padding:1em;
-  -moz-box-shadow:5px 5px 7px rgba(33,33,33,1);
-  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
-  -moz-transition:-moz-transform .15s linear;
-  -o-transition:-o-transform .15s linear;
-  -webkit-transition:-webkit-transform .15s linear;
+.tasksList .purple a {
+  -o-transform: rotate(-3deg);
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  position: relative;
+  top: -5px;
+  background: #ccf;
 }
 
-.tasksList div a{
+.tasksList .yellow a {
+  -o-transform: rotate(5deg);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  position: relative;
+  top: -10px;
+}
+
+.tasksList div {
+  position: absolute;
+  margin: 1em;
+  float: left;
+}
+
+.tasksList div a {
+  text-decoration: none;
+  color: #000;
+  background: #ffc;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  -webkit-transform:rotate(-6deg);
-  -o-transform:rotate(-6deg);
-  -moz-transform:rotate(-6deg);
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  height: 10em;
+  width: 10em;
+  padding: 1em;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+          box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  -webkit-transition: -webkit-transform 0.15s linear;
+  transition: -webkit-transform 0.15s linear;
+  transition: transform 0.15s linear;
+  transition: transform 0.15s linear, -webkit-transform 0.15s linear;
 }
 
-.tasksList div:nth-child(even) a{
-  -o-transform:rotate(4deg);
-  -webkit-transform:rotate(4deg);
-  -moz-transform:rotate(4deg);
-  position:relative;
-  top:5px;
-  background:#cfc;
-}
-
-.tasksList div:nth-child(3n) a{
-  -o-transform:rotate(-3deg);
-  -webkit-transform:rotate(-3deg);
-  -moz-transform:rotate(-3deg);
-  position:relative;
-  top:-5px;
-  background:#ccf;
-}
-
-.tasksList div:nth-child(5n) a{
-  -o-transform:rotate(5deg);
-  -webkit-transform:rotate(5deg);
-  -moz-transform:rotate(5deg);
-  position:relative;
-  top:-10px;
-}
-
-.tasksList div a:active,.tasksList div a:focus{
-  -moz-box-shadow:10px 10px 7px rgba(0,0,0,.7);
-  -webkit-box-shadow: 10px 10px 7px rgba(0,0,0,.7);
-  box-shadow:10px 10px 7px rgba(0,0,0,.7);
+.tasksList div a:active {
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
   -webkit-transform: scale(1.25);
   -moz-transform: scale(1.25);
   -o-transform: scale(1.25);
-  position:relative;
+  position: relative;
   z-index: 500;
   cursor: pointer;
 }
 
-.tasksList div a .button{
-  display: flex;
-  justify-content: flex-end;
-  width: 80%; 
+.tasksList div a:focus {
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position: relative;
+  z-index: 500;
+  cursor: pointer;
 }
 
+.tasksList div a h2 {
+  font-size: 120%;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
 
-.tasksList div a button{
+.tasksList div a p {
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 180%;
+}
+
+.tasksList div a textarea {
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 100%;
+  position: absolute;
+  top: 25%;
+  width: 85%;
+  height: 70%;
+  background: transparent;
+}
+
+.tasksList div a .button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  width: 80%;
+  bottom: 0;
+}
+
+.tasksList div a .button button {
   background-color: transparent;
   border-color: transparent;
 }
@@ -115,35 +144,95 @@ body{
 }
 
 .singleTask-enter {
-  opacity: 0; 
+  opacity: 0;
 }
+
 .singleTask-enter-active {
-  opacity: 1; 
+  opacity: 1;
+  -webkit-transition: -webkit-transform 1000ms ease-in-out;
+  transition: -webkit-transform 1000ms ease-in-out;
   transition: transform 1000ms ease-in-out;
+  transition: transform 1000ms ease-in-out, -webkit-transform 1000ms ease-in-out;
 }
+
 .singleTask-exit {
-  opacity: 1; 
+  opacity: 1;
 }
+
 .singleTask-exit-active {
-  opacity: 0; 
+  opacity: 0;
+  -webkit-transition: -webkit-transform 1000ms ease-in;
+  transition: -webkit-transform 1000ms ease-in;
   transition: transform 1000ms ease-in;
+  transition: transform 1000ms ease-in, -webkit-transform 1000ms ease-in;
 }
-
-.title{
-  position: absolute; 
-  top: 2vh; 
-  left: 5vw; 
-}
-
 
 .addTask {
-  position: absolute; 
-  bottom: 2vh; 
-  right: 5vw; 
-  display: inline-block; 
-  border: 0.02px solid black; 
-  margin: 10px; 
-  padding: 10px; 
-  min-width: 200px; 
+  position: absolute;
+  bottom: 2vh;
+  right: 5vw;
+  display: inline-block;
+  background: #ffc;
+  height: 10em;
+  width: 10em;
+  margin: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+          box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  -webkit-transition: -webkit-transform 0.15s linear;
+  transition: -webkit-transform 0.15s linear;
+  transition: transform 0.15s linear;
+  transition: transform 0.15s linear, -webkit-transform 0.15s linear;
 }
 
+.addTask form select {
+  font-size: 100%;
+  font-weight: bold;
+  padding-bottom: 10px;
+  background: transparent;
+  border-color: transparent;
+  width: 107%;
+}
+
+.addTask form textarea {
+  text-decoration: none;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 1em;
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 100%;
+  width: 82%;
+  background: transparent;
+  border: 1px solid brown;
+}
+
+.addTask form textarea:active {
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 500;
+  cursor: pointer;
+}
+
+.addTask form textarea:focus {
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 500;
+  cursor: pointer;
+}
+
+.addTask form input {
+  background-color: #ccf;
+  border-color: #ccf;
+}
+/*# sourceMappingURL=App.css.map */

@@ -1,11 +1,10 @@
-import React, { useEffect, useState } from 'react';
-import './App.css';
-import Task from './components/Task';
-import AddTask from './components/AddTask';
-import { v4 as uuidv4 } from 'uuid';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Task from "./components/Task";
+import AddTask from "./components/AddTask";
+import { v4 as uuidv4 } from "uuid";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import data from "./components/data";
-
 
 const App = () => {
   const [tasks, setTasks] = useState(null);
@@ -19,51 +18,50 @@ const App = () => {
 
   useEffect(() => {
     setTasks(data);
-  });
-
+  }, []);
+ 
   //delete Task in <Task>
-  const handleClick = (id) => {
-    setTasks(tasks.filter(task => (task.id !== id)))
-  }
+  const handleDelete = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
 
   //add Task in <AddTask>
-  const addTask = (name) => {
-    setTasks([...tasks, { id: uuidv4(), name: name }])
-  }
+  const addTask = (name, selection) => {
+    setTasks([...tasks, { id: uuidv4(), name: name, cathegory: selection }]);
+  };
 
-  //edit Task in <Task> 
+  //edit Task in <Task>
   const editName = (name, index) => {
     tasks[index].name = name;
-    setTasks((prevState => [
-      ...prevState]))
-  }
+    setTasks((prevState) => [...prevState]);
+  };
+
+  const cathegories= tasks && tasks.map(task => task.cathegory) 
+  const uniqueCathegories = [...new Set(cathegories)];
 
   return (
     <div className="App">
       <h1 className="title">my not to do list</h1>
-      <TransitionGroup className='tasksList'>
-        {tasks && tasks.map((task, index) =>
-          <CSSTransition
-            key={task.id}
-            timeout={1000}
-            classNames='singleTask'
-          >
-            <Task
-              editName={editName}
-              handleClick={handleClick}
-              taskName={task.name}
-              taskCathegory={task.cathegory}
-              key={task.id}
-              taskId={task.id}
-              index={index}
-              listLength={tasks.length}
-            />
-          </CSSTransition>
-        )}
+      <TransitionGroup className="tasksList">
+        {tasks &&
+          tasks.map((task, index) => (
+            <CSSTransition key={task.id} timeout={1000} classNames="singleTask">
+              <Task
+                editName={editName}
+                handleDelete={handleDelete}
+                taskName={task.name}
+                taskCathegory={task.cathegory}
+                key={task.id}
+                taskId={task.id}
+                index={index}
+                listLength={tasks.length}
+              />
+            </CSSTransition>
+          ))}
       </TransitionGroup>
-      <AddTask addTask={addTask} />
+      {uniqueCathegories && <AddTask addTask={addTask} uniqueCathegories={uniqueCathegories} />}
     </div>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,190 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: arial, sans-serif;
+  font-size: 100%;
+  background: linear-gradient(#ccc, #fff);
+  color: black;
+  height: 100vh;
+}
+
+.title {
+  position: absolute;
+  top: 2vh;
+  left: 5vw;
+}
+
+.tasksList {
+  overflow: hidden;
+  padding: 3em;
+  .green a {
+    -o-transform: rotate(4deg);
+    -webkit-transform: rotate(4deg);
+    -moz-transform: rotate(4deg);
+    position: relative;
+    top: 5px;
+    background: #cfc;
+  }
+  .purple a {
+    -o-transform: rotate(-3deg);
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    position: relative;
+    top: -5px;
+    background: #ccf;
+  }
+  .yellow a {
+    -o-transform: rotate(5deg);
+    -webkit-transform: rotate(5deg);
+    -moz-transform: rotate(5deg);
+    position: relative;
+    top: -10px;
+  }
+  div {
+    position: absolute;
+    margin: 1em;
+    float: left;
+    a {
+      text-decoration: none;
+      color: #000;
+      background: #ffc;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      height: 10em;
+      width: 10em;
+      padding: 1em;
+      box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+      transition: transform 0.15s linear;
+      &:active {
+        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        -webkit-transform: scale(1.25);
+        -moz-transform: scale(1.25);
+        -o-transform: scale(1.25);
+        position: relative;
+        z-index: 500;
+        cursor: pointer;
+      }
+      &:focus {
+        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        -webkit-transform: scale(1.25);
+        -moz-transform: scale(1.25);
+        -o-transform: scale(1.25);
+        position: relative;
+        z-index: 500;
+        cursor: pointer;
+      }
+      h2 {
+        font-size: 120%;
+        font-weight: bold;
+        padding-bottom: 10px;
+      }
+      p {
+        font-family: "Reenie Beanie", arial, sans-serif;
+        font-size: 180%;
+      }
+      textarea {
+        font-family: "Reenie Beanie", arial, sans-serif;
+        font-size: 100%;
+        position: absolute;
+        top: 25%;
+        width: 85%;
+        height: 70%;
+        background: transparent;
+      }
+      .button {
+        display: flex;
+        justify-content: flex-end;
+        width: 80%;
+        bottom: 0;
+        button {
+          background-color: transparent;
+          border-color: transparent;
+        }
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.singleTask-enter {
+  opacity: 0;
+}
+.singleTask-enter-active {
+  opacity: 1;
+  transition: transform 1000ms ease-in-out;
+}
+.singleTask-exit {
+  opacity: 1;
+}
+.singleTask-exit-active {
+  opacity: 0;
+  transition: transform 1000ms ease-in;
+}
+
+.addTask {
+  position: absolute;
+  bottom: 2vh;
+  right: 5vw;
+  display: inline-block;
+  background: #ffc;
+  height: 10em;
+  width: 10em;
+  margin: 10px;
+  padding: 10px;
+  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  transition: transform 0.15s linear;
+  form {
+    select {
+      font-size: 100%;
+      font-weight: bold;
+      padding-bottom: 10px;
+      background: transparent;
+      border-color: transparent;
+      width: 107%;
+    }
+    textarea {
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1em;
+      font-family: "Reenie Beanie", arial, sans-serif;
+      font-size: 100%;
+      width: 82%;
+      background: transparent;
+      border: 1px solid brown;
+      &:active {
+        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        position: relative;
+        z-index: 500;
+        cursor: pointer;
+      }
+      &:focus {
+        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        position: relative;
+        z-index: 500;
+        cursor: pointer;
+      }
+    }
+    input {
+      background-color: #ccf;
+      border-color: #ccf;
+    }
+  }
+}
