@@ -11,21 +11,74 @@ body {
   height: 100vh;
 }
 
-.title {
-  position: absolute;
-  top: 2vh;
-  left: 5vw;
+.titlegroup {
+  display: flex;
+  justify-content: center;
+  .title {
+      font-family: "test";
+      margin: 5vh; 
+  }
+  .addTask {
+    background: #ffc;
+    padding: 10px;
+    font-family: "Comic Sans MS";
+    width: 400px;
+    box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+    transform: rotate(-1deg);
+    margin: 1vh 0 0 35vw; 
+    select {
+      margin: 1px 0 15px 0;
+    }
+    textarea {
+      text-decoration: none;
+      color: #000;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      padding: 1em;
+      font-family: "Reenie Beanie", arial, sans-serif;
+      font-size: 1.5rem;
+      width: 82%;
+      background: transparent;
+      border: 1px solid brown;
+      &:active {
+        // -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        // -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        // box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        // position: relative;
+        // z-index: 500;
+        cursor: pointer;
+      }
+      &:focus {
+        // -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        // -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        // box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        // position: relative;
+        // z-index: 500;
+        cursor: pointer;
+      }
+    }
+    .btn-sit {
+      border: 2px solid #333;
+      padding: 2px 10px;
+      background: none;
+      font-family: "test";
+      font-size: 20px;
+    }
+    .inp-sit {
+      border: 2px solid #333;
+      padding: 6px;
+      vertical-align: top;
+    }
+  }
 }
 
 .tasksList {
-  overflow: hidden;
-  padding: 3em;
   .green a {
     -o-transform: rotate(4deg);
     -webkit-transform: rotate(4deg);
     -moz-transform: rotate(4deg);
     position: relative;
-    top: 5px;
     background: #cfc;
   }
   .purple a {
@@ -33,7 +86,6 @@ body {
     -webkit-transform: rotate(-3deg);
     -moz-transform: rotate(-3deg);
     position: relative;
-    top: -5px;
     background: #ccf;
   }
   .yellow a {
@@ -41,7 +93,13 @@ body {
     -webkit-transform: rotate(5deg);
     -moz-transform: rotate(5deg);
     position: relative;
-    top: -10px;
+  }
+  .red a {
+    background: linear-gradient(135deg, #ff879b 81%, #ff879b 82%, #ffc7d0 100%);
+    -o-transform: rotate(-1deg);
+    -webkit-transform: rotate(-1deg);
+    -moz-transform: rotate(-1deg);
+    position: relative;
   }
   div {
     position: absolute;
@@ -130,61 +188,4 @@ body {
 .singleTask-exit-active {
   opacity: 0;
   transition: transform 1000ms ease-in;
-}
-
-.addTask {
-  position: absolute;
-  bottom: 2vh;
-  right: 5vw;
-  display: inline-block;
-  background: #ffc;
-  height: 10em;
-  width: 10em;
-  margin: 10px;
-  padding: 10px;
-  box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-  transition: transform 0.15s linear;
-  form {
-    select {
-      font-size: 100%;
-      font-weight: bold;
-      padding-bottom: 10px;
-      background: transparent;
-      border-color: transparent;
-      width: 107%;
-    }
-    textarea {
-      text-decoration: none;
-      color: #000;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      padding: 1em;
-      font-family: "Reenie Beanie", arial, sans-serif;
-      font-size: 100%;
-      width: 82%;
-      background: transparent;
-      border: 1px solid brown;
-      &:active {
-        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        position: relative;
-        z-index: 500;
-        cursor: pointer;
-      }
-      &:focus {
-        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        position: relative;
-        z-index: 500;
-        cursor: pointer;
-      }
-    }
-    input {
-      background-color: #ccf;
-      border-color: #ccf;
-    }
-  }
 }

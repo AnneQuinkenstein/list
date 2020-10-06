@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 const AddTask = ({ addTask, uniqueCathegories }) => {
-  
   const [name, setName] = useState("");
   const [selection, setSelection] = useState("");
 
@@ -20,27 +19,26 @@ const AddTask = ({ addTask, uniqueCathegories }) => {
   };
 
   return (
-    <div className="addTask">
-      <form onSubmit={handleSubmit}>
-        <select
-          className="Dropdownlist"
-          onChange={handleChoice}
-          id="cathegory"
-          name="cathegory"
-        >
-          {uniqueCathegories &&
-            uniqueCathegories.map((cat) => <option value={cat}>{cat}</option>)}
-        </select>
-        <textarea
-          id="NotToDo"
-          onChange={handleChange}
-          value={name}
-          type="text"
-          autoFocus
-        />
-        <input type="submit" value="Submit" />
-      </form>
-    </div>
+    <form className="addTask" onSubmit={handleSubmit}>
+      <select
+        className="postit-title"
+        onChange={handleChoice}
+        id="cathegory"
+        name="cathegory"
+      >
+        <option>Choose Cathegory</option>
+        {uniqueCathegories &&
+          uniqueCathegories.map((cat) => <option value={cat}>{cat}</option>)}
+      </select>
+      <textarea
+        className="inp-sit"
+        onChange={handleChange}
+        value={name}
+        type="text"
+        autoFocus
+      />
+      <input className="btn-sit active" type="submit" value="Submit" />
+    </form>
   );
 };
 

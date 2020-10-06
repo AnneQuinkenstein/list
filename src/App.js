@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     setTasks(data);
   }, []);
- 
+
   //delete Task in <Task>
   const handleDelete = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
@@ -36,12 +36,17 @@ const App = () => {
     setTasks((prevState) => [...prevState]);
   };
 
-  const cathegories= tasks && tasks.map(task => task.cathegory) 
+  const cathegories = tasks && tasks.map((task) => task.cathegory);
   const uniqueCathegories = [...new Set(cathegories)];
 
   return (
     <div className="App">
-      <h1 className="title">my not to do list</h1>
+      <div className="titlegroup">
+        <h1 className="title">my not to do list</h1>
+        {uniqueCathegories && (
+          <AddTask addTask={addTask} uniqueCathegories={uniqueCathegories} />
+        )}
+      </div>
       <TransitionGroup className="tasksList">
         {tasks &&
           tasks.map((task, index) => (
@@ -59,7 +64,6 @@ const App = () => {
             </CSSTransition>
           ))}
       </TransitionGroup>
-      {uniqueCathegories && <AddTask addTask={addTask} uniqueCathegories={uniqueCathegories} />}
     </div>
   );
 };

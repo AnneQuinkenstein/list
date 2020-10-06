@@ -12,15 +12,77 @@ body {
   height: 100vh;
 }
 
-.title {
-  position: absolute;
-  top: 2vh;
-  left: 5vw;
+.titlegroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.tasksList {
-  overflow: hidden;
-  padding: 3em;
+.titlegroup .title {
+  font-family: "test";
+  margin: 5vh;
+}
+
+.titlegroup .addTask {
+  background: #ffc;
+  padding: 10px;
+  font-family: "Comic Sans MS";
+  width: 400px;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+          box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  -webkit-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+  margin: 1vh 0 0 35vw;
+}
+
+.titlegroup .addTask select {
+  margin: 1px 0 15px 0;
+}
+
+.titlegroup .addTask textarea {
+  text-decoration: none;
+  color: #000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  padding: 1em;
+  font-family: "Reenie Beanie", arial, sans-serif;
+  font-size: 1.5rem;
+  width: 82%;
+  background: transparent;
+  border: 1px solid brown;
+}
+
+.titlegroup .addTask textarea:active {
+  cursor: pointer;
+}
+
+.titlegroup .addTask textarea:focus {
+  cursor: pointer;
+}
+
+.titlegroup .addTask .btn-sit {
+  border: 2px solid #333;
+  padding: 2px 10px;
+  background: none;
+  font-family: "test";
+  font-size: 20px;
+}
+
+.titlegroup .addTask .inp-sit {
+  border: 2px solid #333;
+  padding: 6px;
+  vertical-align: top;
 }
 
 .tasksList .green a {
@@ -28,7 +90,6 @@ body {
   -webkit-transform: rotate(4deg);
   -moz-transform: rotate(4deg);
   position: relative;
-  top: 5px;
   background: #cfc;
 }
 
@@ -37,7 +98,6 @@ body {
   -webkit-transform: rotate(-3deg);
   -moz-transform: rotate(-3deg);
   position: relative;
-  top: -5px;
   background: #ccf;
 }
 
@@ -46,7 +106,14 @@ body {
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
   position: relative;
-  top: -10px;
+}
+
+.tasksList .red a {
+  background: linear-gradient(135deg, #ff879b 81%, #ff879b 82%, #ffc7d0 100%);
+  -o-transform: rotate(-1deg);
+  -webkit-transform: rotate(-1deg);
+  -moz-transform: rotate(-1deg);
+  position: relative;
 }
 
 .tasksList div {
@@ -165,74 +232,5 @@ body {
   transition: -webkit-transform 1000ms ease-in;
   transition: transform 1000ms ease-in;
   transition: transform 1000ms ease-in, -webkit-transform 1000ms ease-in;
-}
-
-.addTask {
-  position: absolute;
-  bottom: 2vh;
-  right: 5vw;
-  display: inline-block;
-  background: #ffc;
-  height: 10em;
-  width: 10em;
-  margin: 10px;
-  padding: 10px;
-  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-          box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-  -webkit-transition: -webkit-transform 0.15s linear;
-  transition: -webkit-transform 0.15s linear;
-  transition: transform 0.15s linear;
-  transition: transform 0.15s linear, -webkit-transform 0.15s linear;
-}
-
-.addTask form select {
-  font-size: 100%;
-  font-weight: bold;
-  padding-bottom: 10px;
-  background: transparent;
-  border-color: transparent;
-  width: 107%;
-}
-
-.addTask form textarea {
-  text-decoration: none;
-  color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding: 1em;
-  font-family: "Reenie Beanie", arial, sans-serif;
-  font-size: 100%;
-  width: 82%;
-  background: transparent;
-  border: 1px solid brown;
-}
-
-.addTask form textarea:active {
-  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  position: relative;
-  z-index: 500;
-  cursor: pointer;
-}
-
-.addTask form textarea:focus {
-  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-  position: relative;
-  z-index: 500;
-  cursor: pointer;
-}
-
-.addTask form input {
-  background-color: #ccf;
-  border-color: #ccf;
 }
 /*# sourceMappingURL=App.css.map */

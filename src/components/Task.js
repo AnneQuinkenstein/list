@@ -30,12 +30,12 @@ const Task = ({
   };
 
   useEffect(() => {
-    const randNum = Math.random() * 70;
-    const randNum2 = Math.random() * 80;
+    const randNum = Math.random() * 60+15;
+    const randNum2 = Math.random() * 80+1;
     setStyle({
       zIndex: index,
-      top: `${randNum}%`,
-      left: `${randNum2}%`,
+      top: `${randNum}vh`,
+      left: `${randNum2}vw`,
     });
   }, []);
 
@@ -45,7 +45,7 @@ const Task = ({
       top: "style[top]",
       left: "style[left]",
     });
-    setNum(num + num);
+    setNum((num > listLength)? num + 1: listLength + 1);
     e.preventDefault();
   };
 
@@ -64,7 +64,7 @@ const Task = ({
       case "Liebesleben":
         return "purple";
       case "Freizeit":
-        return "yellow";
+        return "red";
       case "Finanzen":
         return "yellow";
       case "sonstso":
