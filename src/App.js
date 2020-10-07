@@ -8,6 +8,7 @@ import data from "./components/data";
 
 const App = () => {
   const [tasks, setTasks] = useState(null);
+  const [zIndexNum, setZIndexNum] = useState(0);
 
   //calling API on mounting
   // useEffect(() => {
@@ -19,6 +20,12 @@ const App = () => {
   useEffect(() => {
     setTasks(data);
   }, []);
+
+  useEffect(() => {
+    {
+      tasks && setZIndexNum(tasks.length+10);
+    }
+  }, [tasks]);
 
   //delete Task in <Task>
   const handleDelete = (id) => {
@@ -35,6 +42,9 @@ const App = () => {
     tasks[index].name = name;
     setTasks((prevState) => [...prevState]);
   };
+
+  //set zIndex, so that the PostIt appears on Top onClick
+  const countNum = () => setZIndexNum(zIndexNum + 1);
 
   const cathegories = tasks && tasks.map((task) => task.cathegory);
   const uniqueCathegories = [...new Set(cathegories)];
@@ -59,7 +69,8 @@ const App = () => {
                 key={task.id}
                 taskId={task.id}
                 index={index}
-                listLength={tasks.length}
+                zIndexNum={zIndexNum}
+                countNum={countNum}
               />
             </CSSTransition>
           ))}

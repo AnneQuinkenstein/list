@@ -7,11 +7,11 @@ const Task = ({
   editName,
   handleDelete,
   index,
-  listLength,
+  zIndexNum,
+  countNum
 }) => {
   const [task, setTask] = useState(taskName);
   const [hidden, setHidden] = useState(false);
-  const [num, setNum] = useState(listLength);
   const [style, setStyle] = useState({
     zIndex: index,
     top: "",
@@ -41,11 +41,11 @@ const Task = ({
 
   const handleIndex = (e) => {
     setStyle({
-      zIndex: num,
+      zIndex: zIndexNum,
       top: "style[top]",
       left: "style[left]",
     });
-    setNum((num > listLength)? num + 1: listLength + 1);
+    countNum(); 
     e.preventDefault();
   };
 

@@ -75,30 +75,22 @@ body {
 
 .tasksList {
   .green a {
-    -o-transform: rotate(4deg);
-    -webkit-transform: rotate(4deg);
-    -moz-transform: rotate(4deg);
+    transform: rotate(4deg);
     position: relative;
     background: #cfc;
   }
   .purple a {
-    -o-transform: rotate(-3deg);
-    -webkit-transform: rotate(-3deg);
-    -moz-transform: rotate(-3deg);
+    transform: rotate(-3deg);
     position: relative;
     background: #ccf;
   }
   .yellow a {
-    -o-transform: rotate(5deg);
-    -webkit-transform: rotate(5deg);
-    -moz-transform: rotate(5deg);
+    transform: rotate(5deg);
     position: relative;
   }
   .red a {
     background: linear-gradient(135deg, #ff879b 81%, #ff879b 82%, #ffc7d0 100%);
-    -o-transform: rotate(-1deg);
-    -webkit-transform: rotate(-1deg);
-    -moz-transform: rotate(-1deg);
+    transform: rotate(-1deg);
     position: relative;
   }
   div {
@@ -118,23 +110,15 @@ body {
       box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
       transition: transform 0.15s linear;
       &:active {
-        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
         box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        -webkit-transform: scale(1.25);
-        -moz-transform: scale(1.25);
-        -o-transform: scale(1.25);
+        transform: scale(1.25);
         position: relative;
         z-index: 500;
         cursor: pointer;
       }
       &:focus {
-        -moz-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
         box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
-        -webkit-transform: scale(1.25);
-        -moz-transform: scale(1.25);
-        -o-transform: scale(1.25);
+        transform: scale(1.25);
         position: relative;
         z-index: 500;
         cursor: pointer;
