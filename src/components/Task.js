@@ -30,8 +30,8 @@ const Task = ({
   };
 
   useEffect(() => {
-    const randNum = Math.random() * 60+15;
-    const randNum2 = Math.random() * 80+1;
+    const randNum = Math.random() * 50+10;
+    const randNum2 = Math.random() * 80+1.5;
     setStyle({
       zIndex: index,
       top: `${randNum}vh`,

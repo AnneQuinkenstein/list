@@ -38,6 +38,10 @@ body {
   margin: 1vh 0 0 35vw;
 }
 
+.titlegroup .addTask:hover {
+  z-index: 999;
+}
+
 .titlegroup .addTask select {
   margin: 1px 0 15px 0;
 }
@@ -64,10 +68,12 @@ body {
 }
 
 .titlegroup .addTask textarea:active {
+  z-index: 999;
   cursor: pointer;
 }
 
 .titlegroup .addTask textarea:focus {
+  z-index: 999;
   cursor: pointer;
 }
 
