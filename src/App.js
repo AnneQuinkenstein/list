@@ -8,7 +8,7 @@ import data from "./components/data";
 
 const App = () => {
   const [tasks, setTasks] = useState(null);
-  const [zIndexNum, setZIndexNum] = useState(0);
+  const [zIndexNum, setZIndexNum] = useState(100);
 
   //calling API on mounting
   // useEffect(() => {
@@ -20,12 +20,6 @@ const App = () => {
   useEffect(() => {
     setTasks(data);
   }, []);
-
-  useEffect(() => {
-    {
-      tasks && setZIndexNum(tasks.length+10);
-    }
-  }, [tasks]);
 
   //delete Task in <Task>
   const handleDelete = (id) => {

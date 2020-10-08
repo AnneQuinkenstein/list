@@ -9,7 +9,7 @@ body {
   background: -webkit-gradient(linear, left top, left bottom, from(#ccc), to(#fff));
   background: linear-gradient(#ccc, #fff);
   color: black;
-  height: 100vh;
+  min-height: 100vh;
 }
 
 .titlegroup {
@@ -26,6 +26,12 @@ body {
   margin: 5vh;
 }
 
+@media (max-width: 767px) {
+  .titlegroup .title {
+    margin: 1vh;
+  }
+}
+
 .titlegroup .addTask {
   background: #ffc;
   padding: 10px;
@@ -36,6 +42,12 @@ body {
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);
   margin: 1vh 0 0 35vw;
+}
+
+@media (max-width: 767px) {
+  .titlegroup .addTask {
+    margin: 1vh;
+  }
 }
 
 .titlegroup .addTask:hover {
