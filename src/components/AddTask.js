@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SelectCathegory from "./SelectCathegory";
 
 const AddTask = ({ addTask, uniqueCathegories }) => {
   const [name, setName] = useState("");
@@ -18,18 +19,10 @@ const AddTask = ({ addTask, uniqueCathegories }) => {
     setSelection(event.target.value);
   };
 
+
   return (
     <form className="addTask" onSubmit={handleSubmit}>
-      <select
-        className="postit-title"
-        onChange={handleChoice}
-        id="cathegory"
-        name="cathegory"
-      >
-        <option>Choose Cathegory</option>
-        {uniqueCathegories &&
-          uniqueCathegories.map((cat) => <option value={cat}>{cat}</option>)}
-      </select>
+      <SelectCathegory uniqueCathegories={uniqueCathegories} handleChoice={handleChoice}/>
       <textarea
         className="inp-sit"
         onChange={handleChange}

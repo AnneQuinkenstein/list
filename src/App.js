@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import Task from "./components/Task";
+import Title from "./components/Title";
 import AddTask from "./components/AddTask";
 import { v4 as uuidv4 } from "uuid";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import data from "./components/data";
+import FilterCards from "./components/FilterCards";
 
 const App = () => {
   const [tasks, setTasks] = useState(null);
+  const [showTasks, setShowTasks] = useState(null);
   const [zIndexNum, setZIndexNum] = useState(100);
 
   //calling API on mounting
@@ -20,6 +23,11 @@ const App = () => {
   useEffect(() => {
     setTasks(data);
   }, []);
+
+  useEffect(() => {
+    setShowTasks(tasks);
+    filterChoice("keine Kategorie wählen");
+  }, [tasks]);
 
   //delete Task in <Task>
   const handleDelete = (id) => {
@@ -37,6 +45,15 @@ const App = () => {
     setTasks((prevState) => [...prevState]);
   };
 
+  //filter Choice
+  const filterChoice = (cath) => {
+    if (cath === "keine Kategorie wählen") {
+      setShowTasks(tasks);
+    } else {
+      setShowTasks(tasks.filter((task) => task.cathegory === cath));
+    }
+  };
+
   //set zIndex, so that the PostIt appears on Top onClick
   const countNum = () => setZIndexNum(zIndexNum + 1);
 
@@ -45,15 +62,10 @@ const App = () => {
 
   return (
     <div className="App">
-      <div className="titlegroup">
-        <h1 className="title">my not to do list</h1>
-        {uniqueCathegories && (
-          <AddTask addTask={addTask} uniqueCathegories={uniqueCathegories} />
-        )}
-      </div>
+      <Title />
       <TransitionGroup className="tasksList">
-        {tasks &&
-          tasks.map((task, index) => (
+        {showTasks &&
+          showTasks.map((task, index) => (
             <CSSTransition key={task.id} timeout={1000} classNames="singleTask">
               <Task
                 editName={editName}
@@ -69,6 +81,17 @@ const App = () => {
             </CSSTransition>
           ))}
       </TransitionGroup>
+      <div className="footerGroup">
+        {uniqueCathegories && (
+          <FilterCards
+            filterChoice={filterChoice}
+            uniqueCathegories={uniqueCathegories}
+          />
+        )}
+        {uniqueCathegories && (
+          <AddTask addTask={addTask} uniqueCathegories={uniqueCathegories} />
+        )}
+      </div>
     </div>
   );
 };
