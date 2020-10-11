@@ -1,10 +1,8 @@
 import React from "react";
 import SelectCathegory from "./SelectCathegory";
 
-const FilterCards = ({ uniqueCathegories, filterChoice }) => {
-  const handleChoice = (event) => {
-    filterChoice(event.target.value);
-  };
+const FilterCards = ({ uniqueCathegories, handleChoice, selection }) => {
+
 
   return (
     <div>
@@ -13,6 +11,7 @@ const FilterCards = ({ uniqueCathegories, filterChoice }) => {
         <SelectCathegory
           uniqueCathegories={uniqueCathegories}
           handleChoice={handleChoice}
+          selection={selection}
         />
       </p>
     </div>

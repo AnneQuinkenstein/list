@@ -12,6 +12,7 @@ const App = () => {
   const [tasks, setTasks] = useState(null);
   const [showTasks, setShowTasks] = useState(null);
   const [zIndexNum, setZIndexNum] = useState(100);
+  const [selection, setSelection] = useState("keine Kategorie wählen");
 
   //calling API on mounting
   // useEffect(() => {
@@ -24,18 +25,18 @@ const App = () => {
     setTasks(data);
   }, []);
 
-  useEffect(() => {
-    setShowTasks(tasks);
-    filterChoice("keine Kategorie wählen");
-  }, [tasks]);
-
   //delete Task in <Task>
   const handleDelete = (id) => {
     setTasks(tasks.filter((task) => task.id !== id));
   };
 
-  //add Task in <AddTask>
-  const addTask = (name, selection) => {
+  //select Category
+  const handleChoice = (event) => {
+    setSelection(event.target.value);
+  };
+
+  //  add Task
+  const addTask = (name) => {
     setTasks([...tasks, { id: uuidv4(), name: name, cathegory: selection }]);
   };
 
@@ -46,19 +47,26 @@ const App = () => {
   };
 
   //filter Choice
-  const filterChoice = (cath) => {
-    if (cath === "keine Kategorie wählen") {
-      setShowTasks(tasks);
-    } else {
-      setShowTasks(tasks.filter((task) => task.cathegory === cath));
+  useEffect(() => {
+    const filterChoice = () => {
+      if (selection === "keine Kategorie wählen") {
+        setShowTasks(tasks);
+      } else {
+        setShowTasks(tasks.filter((task) => task.cathegory === selection));
+      }
+    };
+    {
+      tasks && filterChoice();
     }
-  };
+  }, [selection, tasks]);
 
   //set zIndex, so that the PostIt appears on Top onClick
   const countNum = () => setZIndexNum(zIndexNum + 1);
 
   const cathegories = tasks && tasks.map((task) => task.cathegory);
   const uniqueCathegories = [...new Set(cathegories)];
+
+  console.log("selection", selection);
 
   return (
     <div className="App">
@@ -84,12 +92,18 @@ const App = () => {
       <div className="footerGroup">
         {uniqueCathegories && (
           <FilterCards
-            filterChoice={filterChoice}
+            handleChoice={handleChoice}
             uniqueCathegories={uniqueCathegories}
+            selection={selection}
           />
         )}
         {uniqueCathegories && (
-          <AddTask addTask={addTask} uniqueCathegories={uniqueCathegories} />
+          <AddTask
+            addTask={addTask}
+            handleChoice={handleChoice}
+            uniqueCathegories={uniqueCathegories}
+            selection={selection}
+          />
         )}
       </div>
     </div>

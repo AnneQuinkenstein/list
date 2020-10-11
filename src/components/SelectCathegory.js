@@ -1,16 +1,17 @@
 import React from "react";
 
-const SelectCathegory = ({ uniqueCathegories, handleChoice }) => {
+const SelectCathegory = ({ uniqueCathegories, handleChoice, selection }) => {
+
   return (
     <select
       className="postit-title"
-      onChange={handleChoice}
+      onChange={(event) => handleChoice(event)}
       id="cathegory"
       name="cathegory"
     >
-      <option value={'keine Kategorie wählen'}>Kategorie</option>
+      <option value={'keine Kategorie wählen'} >Kategorie</option>
       {uniqueCathegories &&
-        uniqueCathegories.map((cat) => <option value={cat}>{cat}</option>)}
+        uniqueCathegories.map((cat) => <option value={cat} selected={selection === cat && 'selected'}>{cat}</option>)}
     </select>
   );
 };
