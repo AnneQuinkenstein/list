@@ -3,6 +3,7 @@ import React from "react";
 const SelectCathegory = ({ uniqueCathegories, handleChoice, selection }) => {
 
   return (
+    <>
     <select
       className="postit-title"
       onChange={(event) => handleChoice(event)}
@@ -13,6 +14,7 @@ const SelectCathegory = ({ uniqueCathegories, handleChoice, selection }) => {
       {uniqueCathegories &&
         uniqueCathegories.map((cat) => <option value={cat} selected={selection === cat && 'selected'}>{cat}</option>)}
     </select>
+    </>
   );
 };
 

@@ -154,18 +154,21 @@ body > div .App {
   border-color: transparent;
 }
 
-.footerGroup {
-  position: absolute;
-  bottom: 3vh;
+.titleGroup {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.footerGroup .addTask {
+.titleGroup .postit-title {
+  height: 35px;
+  margin: 1vh auto;
+}
+
+.titleGroup .addTask {
   background: #ffc;
   padding: 10px;
   font-family: "Comic Sans MS";
@@ -174,24 +177,26 @@ body > div .App {
           box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);
-  margin: 1vh 0 0 35vw;
+  margin: 1vh auto;
 }
 
 @media (max-width: 767px) {
-  .footerGroup .addTask {
-    margin: 1vh;
+  .titleGroup .addTask {
+    position: absolute;
+    bottom: 1vh;
+    left: 1vw;
   }
 }
 
-.footerGroup .addTask:hover {
+.titleGroup .addTask:hover {
   z-index: 999;
 }
 
-.footerGroup .addTask select {
+.titleGroup .addTask select {
   margin: 1px 0 15px 0;
 }
 
-.footerGroup .addTask textarea {
+.titleGroup .addTask textarea {
   text-decoration: none;
   color: #000;
   display: -webkit-box;
@@ -212,17 +217,17 @@ body > div .App {
   border: 1px solid brown;
 }
 
-.footerGroup .addTask textarea:active {
+.titleGroup .addTask textarea:active {
   z-index: 999;
   cursor: pointer;
 }
 
-.footerGroup .addTask textarea:focus {
+.titleGroup .addTask textarea:focus {
   z-index: 999;
   cursor: pointer;
 }
 
-.footerGroup .addTask .btn-sit {
+.titleGroup .addTask .btn-sit {
   border: 2px solid #333;
   padding: 2px 10px;
   background: none;
@@ -230,7 +235,7 @@ body > div .App {
   font-size: 20px;
 }
 
-.footerGroup .addTask .inp-sit {
+.titleGroup .addTask .inp-sit {
   border: 2px solid #333;
   padding: 6px;
   vertical-align: top;

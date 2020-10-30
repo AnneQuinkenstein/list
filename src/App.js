@@ -71,7 +71,17 @@ const App = () => {
 
   return (
     <div className="App">
+      <div className="titleGroup">
       <Title />
+        {uniqueCathegories && (
+          <AddTask
+            addTask={addTask}
+            handleChoice={handleChoice}
+            uniqueCathegories={uniqueCathegories}
+            selection={selection}
+          />
+        )}
+      </div>
       <TransitionGroup className="tasksList">
         {showTasks &&
           showTasks.map((task, index) => (
@@ -90,23 +100,7 @@ const App = () => {
             </CSSTransition>
           ))}
       </TransitionGroup>
-      <div className="footerGroup">
-        {/* {uniqueCathegories && (
-          <FilterCards
-            handleChoice={handleChoice}
-            uniqueCathegories={uniqueCathegories}
-            selection={selection}
-          />
-        )} */}
-        {uniqueCathegories && (
-          <AddTask
-            addTask={addTask}
-            handleChoice={handleChoice}
-            uniqueCathegories={uniqueCathegories}
-            selection={selection}
-          />
-        )}
-      </div>
+     
     </div>
   );
 };

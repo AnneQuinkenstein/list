@@ -16,8 +16,12 @@ const AddTask = ({ addTask, uniqueCathegories, handleChoice, selection }) => {
   };
   
   return (
-    <form className="addTask" onSubmit={handleSubmit}>
-      <SelectCathegory uniqueCathegories={uniqueCathegories} handleChoice={handleChoice}/>
+    <>
+    <SelectCathegory uniqueCathegories={uniqueCathegories} handleChoice={handleChoice}/>
+    <div className="addTask">
+   
+    <form  onSubmit={handleSubmit}>
+     Füge weitere Not-To-Do Aufgaben zur ausgewählten Kategorie! 
       <textarea
         className="inp-sit"
         onChange={handleChange}
@@ -27,6 +31,8 @@ const AddTask = ({ addTask, uniqueCathegories, handleChoice, selection }) => {
       />
       <input className="btn-sit active" type="submit" value="Submit" />
     </form>
+    </div>
+    </>
   );
 };
 
