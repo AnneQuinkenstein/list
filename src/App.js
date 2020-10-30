@@ -55,6 +55,7 @@ const App = () => {
         setShowTasks(tasks.filter((task) => task.cathegory === selection));
       }
     };
+    // eslint-disable-next-line no-lone-blocks
     {
       tasks && filterChoice();
     }
@@ -90,13 +91,13 @@ const App = () => {
           ))}
       </TransitionGroup>
       <div className="footerGroup">
-        {uniqueCathegories && (
+        {/* {uniqueCathegories && (
           <FilterCards
             handleChoice={handleChoice}
             uniqueCathegories={uniqueCathegories}
             selection={selection}
           />
-        )}
+        )} */}
         {uniqueCathegories && (
           <AddTask
             addTask={addTask}
