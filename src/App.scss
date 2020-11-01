@@ -79,6 +79,13 @@ body {
         z-index: 500;
         cursor: pointer;
       }
+      &:focus-within{
+        box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+        transform: scale(1.25);
+        position: relative;
+        z-index: 500;
+        cursor: pointer;
+      }
       h2 {
         font-size: 120%;
         font-weight: bold;

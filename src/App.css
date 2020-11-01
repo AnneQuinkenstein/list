@@ -117,6 +117,16 @@ body > div .App {
   cursor: pointer;
 }
 
+.tasksList div a:focus-within {
+  -webkit-box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+          box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
+  -webkit-transform: scale(1.25);
+          transform: scale(1.25);
+  position: relative;
+  z-index: 500;
+  cursor: pointer;
+}
+
 .tasksList div a h2 {
   font-size: 120%;
   font-weight: bold;
