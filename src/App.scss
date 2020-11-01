@@ -125,8 +125,28 @@ body {
     height: 35px;
     margin: 1vh auto;
   }
-  .addTask {
+  .yellow {
     background: #ffc;
+    transform: rotate(5deg);
+  }
+  .green {
+    transform: rotate(4deg);
+    background: #cfc;
+  }
+  .purple {
+    transform: rotate(-3deg);
+    background: #ccf;
+  }
+  .red {
+    background: linear-gradient(135deg, #ff879b 81%, #ff879b 82%, #ffc7d0 100%);
+    transform: rotate(-1deg);
+  }
+  .select{
+    height: 35px;
+    margin: 1vh auto;
+    transform: rotate(0deg);
+  }
+  .addTask {
     padding: 10px;
     font-family: "Comic Sans MS";
     width: 400px;
@@ -143,6 +163,11 @@ body {
     }
     select {
       margin: 1px 0 15px 0;
+    }
+    p {
+      font-family: "test";
+      font-size: 1.7vh;
+      padding-bottom: 1vh;
     }
     textarea {
       text-decoration: none;
@@ -170,7 +195,7 @@ body {
       padding: 2px 10px;
       background: none;
       font-family: "test";
-      font-size: 20px;
+      font-size: 1.9vh;
     }
     .inp-sit {
       border: 2px solid #333;

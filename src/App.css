@@ -178,8 +178,38 @@ body > div .App {
   margin: 1vh auto;
 }
 
-.titleGroup .addTask {
+.titleGroup .yellow {
   background: #ffc;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+
+.titleGroup .green {
+  -webkit-transform: rotate(4deg);
+          transform: rotate(4deg);
+  background: #cfc;
+}
+
+.titleGroup .purple {
+  -webkit-transform: rotate(-3deg);
+          transform: rotate(-3deg);
+  background: #ccf;
+}
+
+.titleGroup .red {
+  background: linear-gradient(135deg, #ff879b 81%, #ff879b 82%, #ffc7d0 100%);
+  -webkit-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+}
+
+.titleGroup .select {
+  height: 35px;
+  margin: 1vh auto;
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.titleGroup .addTask {
   padding: 10px;
   font-family: "Comic Sans MS";
   width: 400px;
@@ -204,6 +234,12 @@ body > div .App {
 
 .titleGroup .addTask select {
   margin: 1px 0 15px 0;
+}
+
+.titleGroup .addTask p {
+  font-family: "test";
+  font-size: 1.7vh;
+  padding-bottom: 1vh;
 }
 
 .titleGroup .addTask textarea {
@@ -242,7 +278,7 @@ body > div .App {
   padding: 2px 10px;
   background: none;
   font-family: "test";
-  font-size: 20px;
+  font-size: 1.9vh;
 }
 
 .titleGroup .addTask .inp-sit {
