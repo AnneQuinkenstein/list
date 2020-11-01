@@ -8,7 +8,7 @@ const Task = ({
   handleDelete,
   index,
   zIndexNum,
-  countNum
+  countNum,
 }) => {
   const [task, setTask] = useState(taskName);
   const [hidden, setHidden] = useState(false);
@@ -46,8 +46,14 @@ const Task = ({
       left: "style[left]",
     });
     console.log(zIndexNum);
-    countNum(); 
+    countNum();
     e.preventDefault();
+  };
+
+  const handleTaskFocus = (event) => {
+    let temp = event.currentTarget.value;
+    event.currentTarget.value = "";
+    event.currentTarget.value = temp;
   };
 
   const renderColor = (Cat) => {
@@ -74,7 +80,7 @@ const Task = ({
         return "yellow";
     }
   };
-  
+
   return (
     <div
       onClick={handleIndex}
@@ -86,13 +92,15 @@ const Task = ({
         <p className={hidden ? "hidden" : "visible"}>{taskName}</p>
         <p className={hidden ? "visible" : "hidden"}>
           {" "}
-          <textarea 
+          <textarea
             onChange={handleChange}
             type="text"
             name="task"
+            autoFocus
             value={task}
             className="editTask"
-          ></textarea >
+            onFocus={handleTaskFocus}
+          ></textarea>
         </p>
         <div className="button">
           <button className="deleteButton" onClick={() => handleDelete(taskId)}>
@@ -103,9 +111,9 @@ const Task = ({
             onClick={() => handleEdit(task, index)}
           >
             {hidden ? (
-              <i class="material-icons">check_circle</i>
+              <i className="material-icons">check_circle</i>
             ) : (
-              <i class="material-icons">border_color</i>
+              <i className="material-icons">border_color</i>
             )}{" "}
           </button>
         </div>
