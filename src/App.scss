@@ -4,32 +4,31 @@
 }
 
 body {
-  font-family: arial, sans-serif;
+  font-family: "test", arial, sans-serif;
   font-size: 100%;
   background: linear-gradient(#ccc, #fff);
   color: black;
   height: 100vh;
-  min-width: 100vw; 
-  >div{
+  min-width: 100vw;
+  > div {
     min-height: inherit;
-    min-width: inherit; 
-    .App{
+    min-width: inherit;
+    .App {
       min-height: inherit;
-      min-width: inherit; 
+      min-width: inherit;
     }
   }
 }
 
 .title {
-  font-family: "test";
   text-align: center;
   margin: 1vh auto;
 }
 
 .tasksList {
-  position: relative; 
-  height: min-content; 
-  width: min-content; 
+  position: relative;
+  height: min-content;
+  width: min-content;
   .green a {
     transform: rotate(4deg);
     position: relative;
@@ -79,7 +78,7 @@ body {
         z-index: 500;
         cursor: pointer;
       }
-      &:focus-within{
+      &:focus-within {
         box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.7);
         transform: scale(1.25);
         position: relative;
@@ -141,22 +140,24 @@ body {
     background: linear-gradient(135deg, #ff879b 81%, #ff879b 82%, #ffc7d0 100%);
     transform: rotate(-1deg);
   }
-  .select{
+  .select {
     height: 35px;
     margin: 1vh auto;
     transform: rotate(0deg);
+    font-size: 100%;
+    font-weight: 700;
+    padding-left: 5px;
   }
   .addTask {
     padding: 10px;
-    font-family: "Comic Sans MS";
     width: 400px;
     box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
     transform: rotate(-1deg);
     margin: 1vh auto;
     @media (max-width: 767px) {
-     position: absolute; 
-     bottom: 1vh; 
-     left: 1vw; 
+      position: absolute;
+      bottom: 1vh;
+      left: 1vw;
     }
     &:hover {
       z-index: 999;
@@ -165,9 +166,10 @@ body {
       margin: 1px 0 15px 0;
     }
     p {
-      font-family: "test";
-      font-size: 1.7vh;
       padding-bottom: 1vh;
+      font-size: 150%;
+      font-weight: 700;
+      font-family: "Reenie Beanie", arial, sans-serif;
     }
     textarea {
       text-decoration: none;
@@ -194,8 +196,9 @@ body {
       border: 2px solid #333;
       padding: 2px 10px;
       background: none;
-      font-family: "test";
-      font-size: 1.9vh;
+      font-size: 150%; 
+      font-weight: bold; 
+      font-family: "Reenie Beanie", arial, sans-serif;
     }
     .inp-sit {
       border: 2px solid #333;
@@ -204,8 +207,6 @@ body {
     }
   }
 }
-
-
 
 .hidden {
   display: none;
