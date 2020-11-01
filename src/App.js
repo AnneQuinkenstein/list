@@ -6,7 +6,6 @@ import AddTask from "./components/AddTask";
 import { v4 as uuidv4 } from "uuid";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import data from "./components/data";
-import FilterCards from "./components/FilterCards";
 
 const App = () => {
   const [tasks, setTasks] = useState(null);
@@ -66,8 +65,6 @@ const App = () => {
 
   const cathegories = tasks && tasks.map((task) => task.cathegory);
   const uniqueCathegories = [...new Set(cathegories)];
-
-  console.log("selection", selection);
 
   return (
     <div className="App">

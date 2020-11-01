@@ -45,7 +45,6 @@ const Task = ({
       top: "style[top]",
       left: "style[left]",
     });
-    console.log(zIndexNum);
     countNum();
     e.preventDefault();
   };
