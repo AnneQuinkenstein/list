@@ -12,7 +12,7 @@ const SelectCathegory = ({ uniqueCathegories, handleChoice, selection }) => {
     >
       <option value={'keine Kategorie wählen'} >Kategorie</option>
       {uniqueCathegories &&
-        uniqueCathegories.map((cat) => <option value={cat} selected={selection === cat && 'selected'}>{cat}</option>)}
+        uniqueCathegories.map((cat) => <option key={cat} value={cat} selected={selection === cat && 'selected'}>{cat}</option>)}
     </select>
     </>
   );

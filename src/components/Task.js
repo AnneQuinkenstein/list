@@ -103,7 +103,7 @@ const Task = ({
         </p>
         <div className="button">
           <button className="deleteButton" onClick={() => handleDelete(taskId)}>
-            <i class="material-icons">delete</i>
+            <i className="material-icons">delete</i>
           </button>
           <button
             className="editButton"
@@ -118,6 +118,7 @@ const Task = ({
         </div>
       </a>
     </div>
+    
   );
 };
 

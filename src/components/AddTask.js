@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import SelectCathegory from "./SelectCathegory";
 
-const AddTask = ({ addTask, uniqueCathegories, handleChoice, selection }) => {
+const AddTask = ({ addTask, uniqueCathegories, handleChoice}) => {
   const [name, setName] = useState("");
 
   //handle AddTask Input
@@ -29,7 +29,7 @@ const AddTask = ({ addTask, uniqueCathegories, handleChoice, selection }) => {
         type="text"
         autoFocus
       />
-      <input className="btn-sit active" type="submit" value="Submit" />
+      <input className="btn-sit active" type="submit" value="Pin!" />
     </form>
     </div>
     </>
