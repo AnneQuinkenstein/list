@@ -26,6 +26,8 @@ body > div .App {
 .title {
   text-align: center;
   margin: 1vh auto;
+  text-shadow: -4px -4px 6px black;
+  color: white;
 }
 
 .tasksList {
@@ -220,11 +222,13 @@ body > div .App {
   border-radius: 4px;
   -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
           box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
-  width: 'min-content';
+  width: "min-content";
   color: black;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
 }
 
 .titleGroup .addTask {
