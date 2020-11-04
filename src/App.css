@@ -170,6 +170,13 @@ body > div .App {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 60vw;
+}
+
+@media (max-width: 767px) {
+  .titleGroup {
+    width: 100vw;
+  }
 }
 
 .titleGroup .postit-title {
@@ -209,6 +216,15 @@ body > div .App {
   font-size: 100%;
   font-weight: 700;
   padding-left: 5px;
+  border: none;
+  border-radius: 4px;
+  -webkit-box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+          box-shadow: 5px 5px 7px rgba(33, 33, 33, 0.7);
+  width: 'min-content';
+  color: black;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 
 .titleGroup .addTask {
@@ -219,6 +235,8 @@ body > div .App {
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);
   margin: 1vh auto;
+  position: absolute;
+  right: 3vw;
 }
 
 @media (max-width: 767px) {
@@ -288,6 +306,14 @@ body > div .App {
   border: 2px solid #333;
   padding: 6px;
   vertical-align: top;
+}
+
+.select {
+  position: relative;
+}
+
+select::-ms-expand {
+  display: none;
 }
 
 .hidden {
