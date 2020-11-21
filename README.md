@@ -27,6 +27,10 @@
   </p>
 </p>
 
+## UI Tests with Cypress 
+CLI -> move to the right Folder &
+npm test
+
 ### Built With
 
 - [React](https://reactjs.org/)
