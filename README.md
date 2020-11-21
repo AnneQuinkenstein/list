@@ -28,8 +28,7 @@
 </p>
 
 ## UI Tests with Cypress 
-CLI -> move to the right Folder &
-npm test
+`npm test`
 
 ### Built With
 
