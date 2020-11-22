@@ -1,24 +1,22 @@
 /// <reference types="cypress" />
 
+const { navigate, addTodo, deleteToDo, checkTodosList } = require("../../page-objects/todo");
+
 describe("todo actions", () => {
   beforeEach(() => {
-    cy.visit("http://localhost:3001/");
+    navigate();
   });
 
   it("should check for a list of Not-To-Dos", () => {
-    cy.get(".tasksList").should("have.descendants", "div");
+    checkTodosList(); 
   });
 
   it("should be able to add new Not-To-Do to Not-Todo App", () => {
-    cy.get(".inp-sit").type("paint flowers on dusty windows");
-    cy.get(".btn-sit").click({ force: true });
-    cy.get(".visible").should("contain", "paint flowers on dusty windows");
+    addTodo("Blumen in den Staub malen");
   });
 
   it("should be able to delete an existing Not-To-Do to Not-Todo App", () => {
-    cy.contains("nichts überlegen").within(() => {
-      cy.get(".deleteButton").click({ force: true });
-    });
-    cy.contains("nichts überlegen").should("not.exist");
+    deleteToDo("nichts überlegen");
+    deleteToDo("Mäusefalle nicht leeren"); 
   });
 });

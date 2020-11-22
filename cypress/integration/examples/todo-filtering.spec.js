@@ -1,61 +1,57 @@
 /// <reference types="cypress" />
 
+const {
+  navigate,
+  checkTodosList,
+  filterToDos,
+} = require("../../page-objects/todo");
+
 describe("todo actions", () => {
- it('should goto website', () => {
-    cy.visit("https://aquin-todolist.netlify.app/");
+  it("should goto website", () => {
+    navigate();
   });
 
   it("should check for a list of Not-To-Dos", () => {
-    cy.get(".tasksList").should("have.descendants", "div");
+    checkTodosList();
   });
 
   it('should filter "Familie" correctly', () => {
-    cy.get("#cathegory").select("Familie");
-    cy.get(".tasksList>div").should("have.length", 5);
+    filterToDos("Familie", 5);
   });
 
   it('should filter "Urlaub" correctly', () => {
-    cy.get("#cathegory").select("Urlaub");
-    cy.get(".tasksList>div").should("have.length", 3);
+    filterToDos("Urlaub", 3);
   });
 
   it('should filter "Haushalt" correctly', () => {
-    cy.get("#cathegory").select("Haushalt");
-    cy.get(".tasksList>div").should("have.length", 5);
+    filterToDos("Haushalt", 5);
   });
 
   it('should filter "Selbstoptimierung" correctly', () => {
-    cy.get("#cathegory").select("Selbstoptimierung");
-    cy.get(".tasksList>div").should("have.length", 3);
+    filterToDos("Selbstoptimierung", 3);
   });
 
   it('should filter "Lohnarbeit" correctly', () => {
-    cy.get("#cathegory").select("Lohnarbeit");
-    cy.get(".tasksList>div").should("have.length", 3);
+    filterToDos("Lohnarbeit", 3);
   });
 
   it('should filter "Liebesleben" correctly', () => {
-    cy.get("#cathegory").select("Liebesleben");
-    cy.get(".tasksList>div").should("have.length", 4);
+    filterToDos("Liebesleben", 4);
   });
 
   it('should filter "Freizeit" correctly', () => {
-    cy.get("#cathegory").select("Freizeit");
-    cy.get(".tasksList>div").should("have.length", 4);
+    filterToDos("Freizeit", 4);
   });
 
   it('should filter "Finanzen" correctly', () => {
-    cy.get("#cathegory").select("Finanzen");
-    cy.get(".tasksList>div").should("have.length", 3);
+    filterToDos("Finanzen", 3);
   });
 
   it('should filter "sonstso" correctly', () => {
-    cy.get("#cathegory").select("sonstso");
-    cy.get(".tasksList>div").should("have.length", 4);
+    filterToDos("sonstso", 4);
   });
 
   it('should filter "all" correctly', () => {
-    cy.get("#cathegory").select("keine Kategorie wählen");
-    cy.get(".tasksList>div").should("have.length", 34);
+    filterToDos("keine Kategorie wählen", 34);
   });
 });

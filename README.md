@@ -28,7 +28,7 @@
 </p>
 
 ## UI Tests with Cypress 
-`npm test`
+run `npm test` in the CLI in the same folder
 
 ### Built With
 
